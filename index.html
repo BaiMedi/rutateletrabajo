@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseña tu Jornada Ideal</title>
+    <style>
+        body {
+            font-family: 'Arimo', sans-serif;
+            background-color: #E5EBF4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #22C0DC;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #01BD39;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: block;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #019c30;
+        }
+        .result {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #f4f9ff;
+            border: 1px solid #cce0f5;
+            border-radius: 4px;
+        }
+        .cta {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+        }
+        .cta a {
+            color: #22C0DC;
+            text-decoration: none;
+        }
+        .cta a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Diseña tu Jornada Ideal</h1>
+        <p>Completa este ejercicio para maximizar tu productividad y bienestar.</p>
+
+        <form id="scheduleForm">
+            <label for="start">Hora de inicio del día:</label>
+            <input type="time" id="start" name="start" required>
+
+            <label for="productiveHours">¿Cuáles son tus horas más productivas?</label>
+            <textarea id="productiveHours" name="productiveHours" rows="3" required></textarea>
+
+            <label for="tasks">Tareas clave para completar:</label>
+            <textarea id="tasks" name="tasks" rows="3" required></textarea>
+
+            <label for="breaks">¿Cómo y cuándo prefieres tomar tus pausas?</label>
+            <textarea id="breaks" name="breaks" rows="2" required></textarea>
+
+            <button type="button" onclick="generatePlan()">Generar Plan</button>
+        </form>
+
+        <div id="result" class="result" style="display: none;">
+            <h2>Tu Jornada Ideal</h2>
+            <p><strong>Inicio del día:</strong> <span id="resultStart"></span></p>
+            <p><strong>Horas más productivas:</strong> <span id="resultProductiveHours"></span></p>
+            <p><strong>Tareas clave:</strong> <span id="resultTasks"></span></p>
+            <p><strong>Pausas recomendadas:</strong> <span id="resultBreaks"></span></p>
+            <p><strong>Sugerencia:</strong> Organiza tus tareas más importantes durante las primeras horas de productividad y utiliza pausas para recargar energías.</p>
+        </div>
+
+        <div class="cta">
+            <p>Descubre el Secreto de Reinventarse Profesionalmente en Solo 14 Días</p>
+            <a href="https://klicana.work/Ecpzgd" target="_blank">
+                <button>SÍ! INSCRIBIRME EN “ASISTENTE VIRTUAL EN 14 DÍAS”</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function generatePlan() {
+            const start = document.getElementById('start').value;
+            const productiveHours = document.getElementById('productiveHours').value;
+            const tasks = document.getElementById('tasks').value;
+            const breaks = document.getElementById('breaks').value;
+
+            document.getElementById('resultStart').textContent = start;
+            document.getElementById('resultProductiveHours').textContent = productiveHours;
+            document.getElementById('resultTasks').textContent = tasks;
+            document.getElementById('resultBreaks').textContent = breaks;
+
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
